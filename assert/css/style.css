@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #8c71b6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+ /* ---------- Header ---------- */
+.header { 
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to top, transparent, rgba(140, 113, 182));
+    z-index: 500;
+    
+}
+
+.header__container-logo{
+    width: 4rem;
+    height: 4rem;
+    margin: 3px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.header__nav{
+    position: sticky;
+    display:none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: #f1eff8;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.header__menu-toggle-checkbox:checked ~ .header__nav{
+    display: flex;
+}
+
+.header__menu-toggle-checkbox{
+    display: none;
+}
+
+.header__nav-list{
+    width: 60%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 5px dotted #372a4b;
+    border-radius: 2rem;
+    background-color: #564270;
+}
+
+.header__nav-item{
+    text-decoration: none;
+    list-style: none;
+    border: 2px solid #372a4b;
+    min-width: 80%;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.header__nav-link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #000;
+    height: 100%;
+}
+
+.header__menu-toggle-label{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    z-index: 1;
+    right: 20px;
+}
+
+.header__iteam-menu-nav{
+    width: 2rem;
+    height: .3rem;
+    margin: 3px 0;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+
+/* ----------------------- HEADER QUERIES */
+
+@media screen and (min-width: 49rem) {
+    .header{
+        height: 6rem;
+        background-color: transparent;
+    }
+
+    .header__menu-toggle-label{
+        display: none;
+    }
+
+    .header__container-logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .header__nav{
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        min-width: min-content;
+        height: auto;
+        background-color: transparent;
+    }
+    
+
+    .header__nav-list{
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: #f7f7fb88;
+        padding: .5rem;
+    }
+
+    .header__nav-item{
+        min-width: auto;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        list-style: none;
+        text-align: center;
+        padding: 0 4rem;
+    }
+
+    .header__nav-link{
+        font-size: 1.7rem;
+    }
+}
+
+
+/* ---------- Section fondo ---------- */
+
+.section{
+    width: 100%;
+    position: absolute;
+}
+
+.section__container-img{
+    width: 100%;
+}
+
+.section__img{
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    position:absolute;
+    filter: blur(8px);
+    position: fixed;
+    z-index: -500;
+}
+
+
+/*-------------footer --------------------*/
+.footer {
+    background-color: #372a4b;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer__about,
+.footer__contact,
+.footer__social {
+    flex: 1 1 200px;
+}
+
+.footer__about h3,
+.footer__contact h3,
+.footer__social h3 {
+    margin-bottom: 10px;
+    color: #d2cbe7;
+}
+
+.footer__social a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.footer__social a:hover {
+    text-decoration: underline;
+    color: #9e8bc7;
+}
+
+.footer__contact p {
+    margin: 5px 0;
+}
+
+.footer__copyright {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+
+/*------------------ WhatsApp Float Button ----------------- */
+.whatsapp-float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
